@@ -1,0 +1,39 @@
+<% include ../partials/header.ejs %>
+
+
+  <div id="todoList">
+    <div id="addTodo">
+      <a href="/todos/add">Add  todo</a>
+    </div>
+ <% for (let todo of data) { %>
+    <div class='todo'>
+      <div class="inline">
+          <div id="title">
+            <h3><%= todo.title %></h3>
+          </div>
+          <div id="status">
+            <h3><%= todo.status %></h3>
+          </div>
+      </div>
+      <div class="inline">
+          <div id="category">
+            <h3><%= todo.category %></h3>
+          </div>
+          <div id="clicks">
+            <form action="/todos/<%= todo.id %>?">
+              <input id="inTodos" type="Submit" value="Info"/>
+            </form>
+            <form method="Put" action="/todos/<%= todo.id %>/edit">
+              <input id="inTodos" type="Submit" value="Edit"/>
+            </form>
+            <form action="/todos/<%= todo.id %>?_method=Delete " method="Post">
+              <input id="inTodos" type="Submit" value="Delete"/>
+            </form>
+          </div>
+      </div>
+    </div>
+   </div>
+
+  <% } %>
+
+<% include ../partials/footer.ejs %>

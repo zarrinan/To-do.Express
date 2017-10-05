@@ -1,0 +1,28 @@
+<% include ../partials/header.ejs %>
+
+<section class="page" id="midSection2">
+
+
+<div class='oneTodo'>
+      <h1><%= data.title %></h1>
+      <h3><%= data.category %></h3>
+      <h3><%= data.status %></h3>
+      <div id="desc">
+        <h2>Description:</h2>
+      </div>
+      <p id="oneTodoP"><%= data.description %></p>
+    <div id="clicks">
+          <form method="Put" action="/todos/<%= data.id %>/edit">
+              <input id="inTodos" type="Submit" value="Edit"/>
+            </form>
+            <form action="/todos/<%= data.id %>?_method=Delete " method="Post">
+              <input id="inTodos" type="Submit" value="Delete"/>
+            </form>
+          </div>
+
+
+      <a id="singleTodo" href='/todos/'>Back to TODOS</a>
+  </div>
+</section>
+
+<% include ../partials/footer.ejs %>

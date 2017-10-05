@@ -1,0 +1,19 @@
+<% include ../partials/header.ejs %>
+
+<section class="page" id="midSection2">
+  <div class='Welcome'>
+  <h1>Edit TO DO</h1>
+  </div>
+  <div class="addWrapper">
+      <form action="/todos/<%= data.id %>/edit?_method=Put" method="POST">
+        <input class="addInput" name='title' type='text' value='<%= data.title %>' />
+        <input class="addInput" name='category' type='text' value='<%= data.category %>' />
+        <input class="addInput" name='status' type='text' value='<%= data.status %>'>
+        <input class="addInput" id="editDesc" name='description' type='text' value='<%= data.description %>'>
+        <input id="addSubmit" type='submit' value='Submit!' />
+      </form>
+</div>
+ <a id="editBack" href='/todos/'>Back to TODOS</a>
+</section>
+
+<% include ../partials/footer.ejs %>
